@@ -22,17 +22,11 @@ def update ():
             message = "25 mins up . Reset the timer ?",
             app_name ="Pomodoro clock",
             timeout = 6
-        )
-
-        window = tk.Tk()
-        window.title("Pomodoro timer ")
-        window.config(bg = "black")
-
-        label = tk.Label(window , text = "25:00" ,font = ("Arial" , 40) , bg = "black", fg = "lime")
-        label.pack(padx = 40 , pady = 40)
+      )
 
 
- def toggle ():
+
+def toggle ():
   global running , time_left
   if not running:
       running = True
@@ -42,7 +36,14 @@ def update ():
      running = False
      btn.config(text = "Start")
 
- btn = tk.Button(window , text = "Start", font = ("Arial" , 14) , bg = "black", fg = "lime", command = toggle)
- btn.pack(pady = 10)
+window = tk.Tk()
+window.title("Pomodoro timer ")
+window.config(bg = "black")
 
- window.mainloop()
+label = tk.Label(window , text = "25:00" ,font = ("Arial" , 40) , bg = "black", fg = "lime")
+label.pack(padx = 40 , pady = 40)
+
+btn = tk.Button(window , text = "Start", font = ("Arial" , 14) , bg = "black", fg = "lime", command = toggle)
+btn.pack(pady = 10)
+
+window.mainloop()
